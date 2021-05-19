@@ -30,6 +30,19 @@ class Api {
             });
     }
 
+    proceedSession(token, input) {
+        return fetch(`${BASE_URL}${ENDPOINTS.PROCEED_SESSION}/?token=${token}&input=${input}`)
+            .then(async (res) => {
+                const response =  await this._getResponseData(res);
+                const { suggestions } = response;
+                const message =  response.messages[0];
+                return { message, suggestions };
+            })
+            .catch((err) => {
+                this._handleErr(err);
+            });
+    }
+
     _getResponseData(res) {
         if (res.ok) {
             return res.json();

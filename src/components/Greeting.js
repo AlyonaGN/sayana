@@ -16,7 +16,6 @@ const Greeting = () => {
         dispatch(userActions.setUserName(name));
         dispatch(sessionActions.setMessage(message));
         dispatch(sessionActions.setSuggestions(suggestions));
-        console.log(message, suggestions, name);
     };
 
     return (

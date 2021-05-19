@@ -1,3 +1,76 @@
 .questionnaire {
-    background: pink;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.questionnaire__header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.questionnaire__close-button {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    background-image: url(../../images/close.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+}
+
+.questionnaire__close-button:hover {
+    opacity: 0.6;
+}
+
+.questionnaire__header-title {
+    font-size: 25px;
+    margin: 0;
+    line-height: 2;
+}
+
+.questionnaire__message {
+    font-size: 35px;
+    margin: 0 auto;
+}
+
+.questionnaire__suggs-container {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.questionnaire__sugg-button {
+    width: 45%;
+    max-width: 500px;
+    margin-bottom: 15px;
+    height: 80px;
+    background-color: #F0F0F0;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    border-radius: 81.5275px;
+    font-size: 30px;
+    font-weight: inherit;
+    line-height: 1.87;
+    border: none;
+    color: inherit;
+}
+
+.questionnaire__sugg-button:hover {
+    opacity: 0.7;
 }
