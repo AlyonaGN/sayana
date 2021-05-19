@@ -5,6 +5,8 @@ import ROUTES_MAP from '../utils/ROUTES_MAP';
 import TITLES from '../utils/TITLES.js';
 import { api } from '../api/api';
 import { sessionActions } from '../store/session/actions';
+import manageButtons from '../utils/suggestionsManager';
+import BUTTONS from '../utils/BUTTONS';
 
 const Questionnaire = () => {
     const dispatch = useDispatch();
@@ -30,11 +32,12 @@ const Questionnaire = () => {
                 <Link className="questionnaire__close-button" to={ROUTES_MAP.MAIN}/>
             </div>
             <h2 className="questionnaire__message">{sessionState.message}</h2>
-            <div className="questionnaire__suggs-container">
-                {sessionState.suggestions.map((item, index) => {
-                    if (index >= 6) return;
-                    return <button className="questionnaire__sugg-button" onClick={handleOptionClick}>{item.text}</button>
-                })}
+            <div className={
+                sessionState.suggestions.length <= BUTTONS.maxForRowDirection 
+                    ? "questionnaire__suggs-container questionnaire__suggs-container_columned"
+                    : "questionnaire__suggs-container"
+            }>
+                {manageButtons(sessionState.suggestions, handleOptionClick)}
             </div>
         </div>
     );

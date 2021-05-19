@@ -1,5 +1,7 @@
-const BUTTON_NAMES = {
-    startCheckIn: 'START CHECK-IN',
+const BUTTONS = {
+    startCheckInName: 'START CHECK-IN',
+    maxAmountToShow: 6,
+    maxForRowDirection: 3,
 };
 
-export default BUTTON_NAMES;
+export default BUTTONS;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import BUTTON_NAMES from '../utils/BUTTONS';
 import ROUTES_MAP from '../utils/ROUTES_MAP';
 import { api } from '../api/api';
 import { userActions } from '../store/user/actions';
 import { sessionActions } from '../store/session/actions';
+import BUTTONS from '../utils/BUTTONS';
 
 const Greeting = () => {
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Greeting = () => {
         <div className="page__content greeting">
             <div className="greeting__image"></div>
             <button className="greeting__start-button" type="button" onClick={handleStartSessionClick}>
-                <Link to={ROUTES_MAP.QUESTIONNAIRE} className="greeting__link">{BUTTON_NAMES.startCheckIn}</Link>
+                <Link to={ROUTES_MAP.QUESTIONNAIRE} className="greeting__link">{BUTTONS.startCheckInName}</Link>
             </button>
         </div>
     );

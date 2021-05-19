@@ -50,6 +50,11 @@
     justify-content: space-around;
 }
 
+.questionnaire__suggs-container_columned {
+    justify-content: center;
+    flex-direction: column;
+}
+
 .questionnaire__sugg-button {
     width: 45%;
     max-width: 500px;
