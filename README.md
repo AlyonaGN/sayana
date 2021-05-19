@@ -8,7 +8,7 @@ To launch the app locally please download this repository, find the root folder 
 
 ## Applied technologies and methodologies
 
-1. React (functional components, hooks);
+1. React (functional and class components, hooks);
 2. Redux;
 3. React Router;
 4. BEM.

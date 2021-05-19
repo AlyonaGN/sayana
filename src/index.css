@@ -1,3 +1,6 @@
 @import url(./vendor/normalize.css);
 @import url(./fonts/inter.css);
 @import url(./blocks/page/page.css);
+@import url(./blocks/transitions/transition.css);
+@import url(./blocks/greeting/greeting.css);
+@import url(./blocks/questionnaire/questionnaire.css);

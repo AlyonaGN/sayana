@@ -5,7 +5,7 @@ import ROUTES_MAP from '../utils/ROUTES_MAP';
 function Greeting() {
 
     return (
-        <div>
+        <div className="page__content greeting">
             Greeting
             <Link to={ROUTES_MAP.QUESTIONNAIRE}>TO QUESTIONS</Link>
         </div>
