@@ -4,10 +4,14 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding-top: 45px;
-    font-family: 'Inter', sans-serif;
-    background-color: #F8F8F8;
-    color: #92908d;
+    padding-top: 100px;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(2, 38, 81);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.page__content {
+    width: 80%;
+    margin: 0 auto;
 }

@@ -1,8 +1,15 @@
 import React from 'react';
-import ROUTES_MAP from '../utils/ROUTES_MAP';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import ROUTES_MAP from '../utils/ROUTES_MAP';
 
-function Questionnaire() {
+const Questionnaire = () => {
+    const userState = useSelector((st) => {
+        return st.user;
+    });
+    React.useEffect(() => {
+        
+    }, [userState]);
 
     return (
         <div className="page__content questionnaire">

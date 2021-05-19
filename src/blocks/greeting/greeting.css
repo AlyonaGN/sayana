@@ -1,3 +1,38 @@
 .greeting {
-    background: powderblue;
+    height: 70%;
+}
+
+.greeting__image {
+    width: 100%;
+    height: 75%;
+    background-image: url(../../images/tellme.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto 20px;
+    background-position: center;
+}
+
+.greeting__start-button {
+    width: 60%;
+    height: 15%;
+    background-color: #fffacd;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 81.5275px;
+    border: none;
+}
+
+.greeting__start-button:hover {
+    opacity: 0.8;
+}
+
+.greeting__link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 35px;
 }

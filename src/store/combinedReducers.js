@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import userReducer from './user/reducers';
-import suggestionsReducer from './suggestions/reducers';
+import sessionReducer from './session/reducers';
 
 const reducers = combineReducers({
-  suggestions: suggestionsReducer,
+  session: sessionReducer,
   user: userReducer,
 });
 export default reducers;

@@ -1,6 +1,6 @@
 # Sayana - Check-in
 
-The SPA that represents the check-in process of Sayana (a self care app).
+This represents the check-in process of Sayana (a self care app).
 
 ## Installation and start
 

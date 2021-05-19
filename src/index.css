@@ -1,5 +1,5 @@
 @import url(./vendor/normalize.css);
-@import url(./fonts/inter.css);
+@import url(./fonts/nunito.css);
 @import url(./blocks/page/page.css);
 @import url(./blocks/transitions/transition.css);
 @import url(./blocks/greeting/greeting.css);
