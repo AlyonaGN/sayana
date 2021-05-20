@@ -1,10 +1,13 @@
 const BUTTONS = {
     startCheckInName: 'START CHECK-IN',
-    maxAmountToShow: 6,
-    maxForRowDirection: 3,
-    maxAmountWithMoreOption: 5,
+    maxAmountToShow: 8,
+    maxForColumnDirection: 3,
+    maxAmountWithMoreOption: 7,
     more: 'MORE',
-    other: 'OTHER',
+    stepsWithOtherOption: 2,
+    submit: 'SUBMIT',
+    watchedStory: '::::SAYANA_SYSINFO:STORY_WATCHED',
+    bye: 'Bye! It was nice to see you!'
 };
 
 export default BUTTONS;

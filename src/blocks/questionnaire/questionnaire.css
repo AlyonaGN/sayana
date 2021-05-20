@@ -83,3 +83,44 @@
 .questionnaire__sugg-button:hover {
     opacity: 0.7;
 }
+
+.questionnaire__sugg-button:active {
+    background-color: powderblue;
+}
+
+.questionnaire__input {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 13px;
+    padding-top: 13px;
+    padding-left: 0;
+    padding-right: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.214;
+    width: 100%;
+    display: block;
+    margin: 0 auto 15px;
+    outline-color: #F0F0F0;
+    outline-width: 0.2px;
+}
+
+.questionnaire__submit-button {
+    width: 60%;
+    height: 55px;
+    background-color: #fffacd;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 81.5275px;
+    border: none;
+}
+
+.questionnaire__submit-button:hover {
+    opacity: 0.8;
+}

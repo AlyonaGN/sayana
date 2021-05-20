@@ -1,4 +1,5 @@
 import { BASE_URL, ENDPOINTS } from "../utils/API_CONSTS";
+import TITLES from "../utils/TITLES";
 
 class Api {
     constructor({ baseUrl }) {
@@ -34,15 +35,27 @@ class Api {
         return fetch(`${BASE_URL}${ENDPOINTS.PROCEED_SESSION}/?token=${token}&input=${input}`)
             .then(async (res) => {
                 const response =  await this._getResponseData(res);
-                let suggestions;
-                if (Object.keys(response).includes('suggestions')) {
-                    suggestions = response.suggestions;
+                const { suggestions } = response;
+                console.log(response);
+                let message =  response.messages[0];
+                let storyTime; 
+                let isCompleted;
+                let isKnowledgeIncluded = response.messages.filter(item => item.startsWith('$knowledge'));
+                let isSessionCompleted = response.messages.filter(item => item.includes('<SAYANA_SESSION_FINISHED>'));
+                if (isKnowledgeIncluded.length > 0) {
+                    storyTime = true;
+                    message = TITLES.storyTime;
                 }
                 else {
-                    suggestions = [];
+                    storyTime = false;
                 }
-                const message =  response.messages[0];
-                return { message, suggestions };
+                if (isSessionCompleted.length > 0) {
+                    isCompleted = true;
+                }
+                else {
+                    isCompleted = false;
+                }
+                return { message, suggestions, storyTime, isCompleted };
             })
             .catch((err) => {
                 this._handleErr(err);
