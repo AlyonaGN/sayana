@@ -40,8 +40,8 @@ const App = () => {
         >
           <div className={`page ${defineSlideDirection()}`}>
             <Switch location={location}>
-              <Route exact path={ROUTES_MAP.MAIN}><Greeting /></Route>
               <Route exact path={ROUTES_MAP.QUESTIONNAIRE}><Questionnaire /></Route>
+              <Route exact path={ROUTES_MAP.MAIN}><Greeting /></Route>
             </Switch>
           </div>
         </CSSTransition>

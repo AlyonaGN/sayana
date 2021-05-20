@@ -76,6 +76,10 @@
     color: inherit;
 }
 
+.questionnaire__sugg-button_highlighted {
+    background-color: #fffacd;
+}
+
 .questionnaire__sugg-button:hover {
     opacity: 0.7;
 }

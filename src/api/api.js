@@ -34,7 +34,13 @@ class Api {
         return fetch(`${BASE_URL}${ENDPOINTS.PROCEED_SESSION}/?token=${token}&input=${input}`)
             .then(async (res) => {
                 const response =  await this._getResponseData(res);
-                const { suggestions } = response;
+                let suggestions;
+                if (Object.keys(response).includes('suggestions')) {
+                    suggestions = response.suggestions;
+                }
+                else {
+                    suggestions = [];
+                }
                 const message =  response.messages[0];
                 return { message, suggestions };
             })
