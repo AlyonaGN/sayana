@@ -4,7 +4,7 @@ This represents the check-in process of Sayana (a self care app).
 
 ## Installation and start
 
-To launch the app locally please download this repository, find the root folder of the project using your terminal, install necessary modules by running `npm install` and start the app locally by running `npm start`. 
+To launch the app locally please download this repository, find the root folder of the project using your terminal, install necessary modules by running `npm install` and start the app by running `npm start`. 
 
 ## Applied technologies and methodologies
 
