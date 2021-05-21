@@ -6,7 +6,6 @@ import { sessionActions } from '../store/session/actions';
 
 
 const SessionManager = () => {
-
     const dispatch = useDispatch();
     const inputRef = useRef(null);
     const userState = useSelector((st) => {
@@ -32,7 +31,10 @@ const SessionManager = () => {
         dispatch(sessionActions.setInputShown(true));
     }, [dispatch]);
 
-    const manageSession = useCallback(async () => {
+    const manageSession = useCallback(async (e) => {
+        if (e && e.target.innerHTML === BUTTONS.more) {
+            dispatch(sessionActions.setMorePressed(true));
+        }
         const options = sessionState.suggestions;
             if (sessionState.isCompleted) {
                 dispatch(sessionActions.setMessage(BUTTONS.bye));
@@ -57,25 +59,33 @@ const SessionManager = () => {
         dispatch(sessionActions.setSuggestions(suggestions));
         dispatch(sessionActions.setStoryTime(storyTime));
         dispatch(sessionActions.setCompleted(isCompleted));
+        dispatch(sessionActions.setSlideChanged(false));
     }, [dispatch]);
 
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
+        dispatch(sessionActions.setSlideChanged(true));
         updateSession(userState.token, inputRef.current.value);
-    }, [userState.token, updateSession]);
+    }, [userState.token, updateSession, dispatch]);
 
     const handleOptionClick = useCallback(async (e) => {
+        dispatch(sessionActions.setSlideChanged(true));
         updateSession(userState.token, e.target.innerHTML);
-    }, [updateSession, userState.token]);
+    }, [updateSession, userState.token, dispatch]);
 
     const defineHandler = useCallback((text) => {
         switch(text) {
                case BUTTONS.more:
-                return manageSession;
+                return (e) => {
+                    manageSession(e);
+                    setTimeout(() => {
+                        dispatch(sessionActions.setMorePressed(false));
+                    }, 1000);
+                }
             default: 
                 return handleOptionClick;
         }
-    }, [handleOptionClick, manageSession]);
+    }, [handleOptionClick, manageSession, dispatch]);
 
     React.useEffect(() => {
         if (!sessionState.isStoryTime) {
@@ -95,7 +105,7 @@ const SessionManager = () => {
                 </form>
                 :
                 sessionState.displayedSuggestions.map((item, index) => {
-                    return <button 
+                    return !sessionState.isCompleted && <button 
                             key={index} 
                             className={item.text === BUTTONS.more || item.text === BUTTONS.other 
                                 ? "questionnaire__sugg-button questionnaire__sugg-button_highlighted"

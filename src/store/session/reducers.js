@@ -7,6 +7,8 @@ const initialState = {
   isInputShown: false,
   isStoryTime: false,
   isCompleted: false,
+  isSlideChanged: false,
+  isMorePressed: false,
 };
 
 const  sessionReducer = (state = initialState, action) => {
@@ -23,6 +25,10 @@ const  sessionReducer = (state = initialState, action) => {
       return { ...state, isStoryTime: action.payload };
     case sessionActionTypes.SET_COMPLETED:
       return { ...state, isCompleted: action.payload };
+    case sessionActionTypes.SET_SLIDE_CHANGED:
+      return { ...state, isSlideChanged: action.payload };
+    case sessionActionTypes.SET_MORE_PRESSED:
+      return { ...state, isMorePressed: action.payload };
     default:
       return state;
   }

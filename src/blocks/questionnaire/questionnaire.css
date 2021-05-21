@@ -3,6 +3,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    animation: fadeIn 2s;
+}
+
+.questionnaire_fadeOutAndIn {
+    animation: fadeOutIn 2s;
 }
 
 .questionnaire__header {
@@ -48,6 +53,10 @@
     margin: 0 auto;
     flex-flow: wrap;
     justify-content: space-around;
+}
+
+.questionnaire__suggs-container_translateX {
+   animation: translateX 1s linear;
 }
 
 .questionnaire__suggs-container_columned {
@@ -123,4 +132,27 @@
 
 .questionnaire__submit-button:hover {
     opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes fadeOutIn {
+    0% {opacity:1;}
+    50% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+@keyframes translateX {
+    0% {transform:translateX(0%);}
+    25% {transform:translateX(-100%);}
+    26% {transform:translateX(200%);}
+    100% {transform:translateX(0%);}
 }

@@ -36,8 +36,8 @@ class Api {
             .then(async (res) => {
                 const response =  await this._getResponseData(res);
                 const { suggestions } = response;
-                console.log(response);
                 let message =  response.messages[0];
+                //для реализации пропуска stories с техникой
                 let storyTime; 
                 let isCompleted;
                 let isKnowledgeIncluded = response.messages.filter(item => item.startsWith('$knowledge'));

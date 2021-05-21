@@ -5,6 +5,8 @@ export const sessionActionTypes = {
   SET_INPUT_SHOWN: 'SESSION.SET_INPUT_SHOWN',
   SET_STORY_TIME: 'SESSION.SET_STORY_TIME',
   SET_COMPLETED: 'SESSION.SET_COMPLETED',
+  SET_SLIDE_CHANGED: 'SESSION.SET_SLIDE_CHANGED',
+  SET_MORE_PRESSED: 'SESSION.SET_MORE_PRESSED',
 };
 
 export const sessionActions = {
@@ -25,5 +27,11 @@ export const sessionActions = {
   },
   setCompleted: (payload) => {
     return ({ type: sessionActionTypes.SET_COMPLETED, payload });
+  },
+  setSlideChanged: (payload) => {
+    return ({ type: sessionActionTypes.SET_SLIDE_CHANGED, payload });
+  },
+  setMorePressed: (payload) => {
+    return ({ type: sessionActionTypes.SET_MORE_PRESSED, payload });
   },
 };
