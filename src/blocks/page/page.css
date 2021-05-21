@@ -10,6 +10,7 @@
     color: rgb(2, 38, 81);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #FFFEFA;
 }
 
 .page__content {
